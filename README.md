@@ -4,6 +4,7 @@ Features:
     XML error handling and correcting them
     XML minifying
     XML prettifying
+    XML consistency check
     XML conversion to JSON
     XML & JSON compression and decompression
     User Friendly GUI
