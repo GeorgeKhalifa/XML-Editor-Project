@@ -1,0 +1,10 @@
+C:\Users\fady\source\repos\XML Editor\bin\Debug\XML Editor.exe.config
+C:\Users\fady\source\repos\XML Editor\bin\Debug\XML Editor.exe
+C:\Users\fady\source\repos\XML Editor\bin\Debug\XML Editor.pdb
+C:\Users\fady\source\repos\XML Editor\obj\Debug\XML Editor.csprojAssemblyReference.cache
+C:\Users\fady\source\repos\XML Editor\obj\Debug\XML_Editor.Form1.resources
+C:\Users\fady\source\repos\XML Editor\obj\Debug\XML_Editor.Properties.Resources.resources
+C:\Users\fady\source\repos\XML Editor\obj\Debug\XML Editor.csproj.GenerateResource.cache
+C:\Users\fady\source\repos\XML Editor\obj\Debug\XML Editor.csproj.CoreCompileInputs.cache
+C:\Users\fady\source\repos\XML Editor\obj\Debug\XML Editor.exe
+C:\Users\fady\source\repos\XML Editor\obj\Debug\XML Editor.pdb
