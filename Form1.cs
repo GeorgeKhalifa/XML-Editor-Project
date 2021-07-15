@@ -376,7 +376,131 @@ namespace XML_Editor
         // #endregion
 
 
+        public static string xml_prettifying(item ite, string tab)
+        {
+            if (ite.name == "")
+                return "";
+            string str = "";
+            if (ite.attributes == "")
+            {
+                str += tab + "<" + ite.name + ">";
+            }
+            if (ite.attributes != "")
+            {
+                str += tab + "<" + ite.name + ite.attributes + ">";
+            }
+            if (ite.body == "")
+            {
+                str += '\n';
+            }
+            if (ite.body != "")
+            {
+                str += ite.body;
+            }
+            if (ite.childrenList.Count != 0)
+            {
+                tab += '\t';
+                for (int i = 0; i < ite.childrenList.Count; i++)
+                {
+                    str += xml_prettifying(ite.childrenList[i], tab);
+                }
+                tab = tab.Remove(tab.Length - 1, 1);
+            }
+            if (ite.body == "")
+            {
+                str += tab + "</" + ite.name + ">";
+            }
+            if (ite.body != "")
+            {
+                str += "</" + ite.name + ">";
+            }
+            str += '\n';
 
+            return str;
+        }
+
+
+        public static void split()
+        {
+            //splitting attributes into attributes list to use it in converting to JSON file
+            string temp = "";
+            foreach (item it in items)
+            {
+                if (it.attributes.Length != 0)
+                {
+                    for (int str_index = 0; str_index < it.attributes.Length; str_index++)
+                    {
+                        if ((it.attributes[str_index] == ' ' && str_index == 0) || (it.attributes[str_index] == ' ' && it.attributes[str_index - 1] == '\"'))
+                            continue;
+                        else
+                        {
+                            if (it.attributes[str_index] != '=' && it.attributes[str_index] != '\"')
+                            {
+                                if ((it.attributes[str_index - 1] == ' ' && str_index == 1) || (it.attributes[str_index - 1] == ' ' && it.attributes[str_index - 2] == '\"'))
+                                {
+                                    temp += '-';
+                                    temp += it.attributes[str_index];
+                                    continue;
+                                }
+                                temp += it.attributes[str_index];
+                            }
+                            if (it.attributes[str_index] == '=')
+                            {
+                                it.attributesList.Add(temp);
+                                temp = "";
+                                continue;
+                            }
+                            if (it.attributes[str_index] == '\"' && it.attributes[str_index - 1] == '=')
+                            {
+                                continue;
+                            }
+                            if (it.attributes[str_index] == '\"' && it.attributes[str_index - 1] != '=')
+                            {
+                                it.attributesList.Add(temp);
+                                temp = "";
+                                continue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Compress
+        public static List<int> Compress(string file)
+        {
+            List<int> compressed = new List<int>(); // for data copmressed
+            Dictionary<string, int> compress_table = new Dictionary<string, int>();
+            for (int i = 0; i < 256; i++)
+            {
+                compress_table.Add(((char)i).ToString(), i);
+            }
+            string pervious = ""; //p or w
+            string next_char = ""; //c
+
+            pervious += file[0];
+
+            for (int i = 0; i < file.Length; i++)
+            {
+                if (i != (file.Length) - 1)
+                {
+                    next_char += file[i + 1];
+                }
+                if (compress_table.ContainsKey(pervious + next_char))
+                {
+                    pervious = pervious + next_char;
+                }
+                else
+                {
+                    compressed.Add(compress_table[pervious]);
+                    compress_table.Add(pervious + next_char, compress_table.Count);
+                    pervious = next_char;
+                }
+                next_char = "";
+            }
+            compressed.Add(compress_table[pervious]);
+            return compressed;
+        }
 
 		public static string Decompress(List<int> compressed)
         {
