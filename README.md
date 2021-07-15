@@ -24,4 +24,5 @@ Steps:
     Run Exe to run the project directly
     upload your xml samples using open file in GUI as Shown in Figure:
     
-  
+    
+  ![minifies](https://user-images.githubusercontent.com/41831294/125723379-99b7f88c-49e5-4287-956c-56fc21069eae.png)
