@@ -1,6 +1,7 @@
 # XML-Editor-Project
 
-NOTE:
+# NOTE:
+
 for Large data sample files such as 6MB file, checking/solving errors take some time to display the result
 
 
