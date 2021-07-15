@@ -2,8 +2,7 @@
 Features:
 
     XML error handling and correcting them
-    XML formatting
-    XML formatting
+    XML minifying
     XML prettifying
     XML conversion to JSON
     XML & JSON compression and decompression
