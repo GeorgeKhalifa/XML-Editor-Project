@@ -8,3 +8,10 @@ C:\Users\fady\source\repos\XML Editor\obj\Debug\XML Editor.csproj.GenerateResour
 C:\Users\fady\source\repos\XML Editor\obj\Debug\XML Editor.csproj.CoreCompileInputs.cache
 C:\Users\fady\source\repos\XML Editor\obj\Debug\XML Editor.exe
 C:\Users\fady\source\repos\XML Editor\obj\Debug\XML Editor.pdb
+D:\CLONE HERE\XML-Editor-Project\obj\Debug\XML Editor.csprojAssemblyReference.cache
+D:\CLONE HERE\XML-Editor-Project\obj\Debug\XML_Editor.Form1.resources
+D:\CLONE HERE\XML-Editor-Project\obj\Debug\XML_Editor.Properties.Resources.resources
+D:\CLONE HERE\XML-Editor-Project\obj\Debug\XML Editor.csproj.GenerateResource.cache
+D:\CLONE HERE\XML-Editor-Project\obj\Debug\XML Editor.csproj.CoreCompileInputs.cache
+D:\CLONE HERE\XML-Editor-Project\obj\Debug\XML Editor.exe
+D:\CLONE HERE\XML-Editor-Project\obj\Debug\XML Editor.pdb
